@@ -1,0 +1,58 @@
+--library ieee;
+--use ieee.std_logic_1164.all;
+--use ieee.numeric_std.all;
+--
+--entity WCY18KS1S1_Chudzik_Mateusz_HIGHT_KeyReg is
+--port(
+--	inClk 				: in std_logic;
+--	inStartGen 			: in std_logic;
+--	inRestartReg		: in std_logic;
+--	inRoundNumber		: in std_logic_vector(5 downto 0);
+--	inMainKey			: in std_logic_vector(127 downto 0);
+--	outSK					: in std_logic_vector(127 downto 0)
+--);
+--
+--end WCY18KS1S1_Chudzik_Mateusz_HIGHT_KeyReg;
+--
+--architecture logic of WCY18KS1S1_Chudzik_Mateusz_HIGHT_KeyReg is
+--
+--	type delta is array (0 to 127) of std_logic_vector(7 downto 0);
+--	constant D : delta := (x"5a", x"6d", x"36", x"1b", x"0d", x"06", x"03", x"41", x"60", x"30", x"18", x"4c", x"66", x"33", x"59", x"2c",
+--								  x"56", x"2b", x"15", x"4a", x"65", x"72", x"39", x"1c", x"4e", x"67", x"73", x"79", x"3c", x"5e", x"6f", x"37",
+--								  x"5b", x"2d", x"16", x"0b", x"05", x"42", x"21", x"50", x"28", x"54", x"2a", x"55", x"6a", x"75", x"7a", x"7d",
+--								  x"3e", x"5f", x"2f", x"17", x"4b", x"25", x"52", x"29", x"14", x"0a", x"45", x"62", x"31", x"58", x"6c", x"76",
+--								  x"3b", x"1d", x"0e", x"47", x"63", x"71", x"78", x"7c", x"7e", x"7f", x"3f", x"1f", x"0f", x"07", x"43", x"61",
+--								  x"70", x"38", x"5c", x"6e", x"77", x"7b", x"3d", x"1e", x"4f", x"27", x"53", x"69", x"34", x"1a", x"4d", x"26",
+--								  x"13", x"49", x"24", x"12", x"09", x"04", x"02", x"01", x"40", x"20", x"10", x"08", x"44", x"22", x"11", x"48",
+--								  x"64", x"32", x"19", x"0c", x"46", x"23", x"51", x"68", x"74", x"3a", x"5d", x"2e", x"57", x"6b", x"35", x"5a" 
+--									);
+--	
+--	signal SK	: std_logic_vector(63 downto 0) := x"0000000000000000";
+--	signal K 	: std_logic_vector(63 downto 0) := x"0000000000000000";
+--	
+--begin
+--
+--
+--	process(inClk)
+--	begin
+--		if(rising_edge(inClk)) then
+--			if(inStartGen = '1') then
+--				K(63 downto 0) <= inMainKey(63 downto 0);
+--			end if;
+--		end if;
+--	end process;
+--	
+--	
+--	
+--	process(inClk)
+--	begin
+--		if(rising_edge(inClk)) then
+--			if(inRestartReg = '1') then
+--				K(63 downto 0) <= x"0000000000000000";
+--			end if;
+--		end if;
+--	end process;
+--
+--	
+--
+--end logic;

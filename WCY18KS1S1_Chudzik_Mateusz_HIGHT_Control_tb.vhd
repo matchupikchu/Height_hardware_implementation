@@ -1,0 +1,100 @@
+--library ieee;
+--use ieee.std_logic_1164.all;
+--LIBRARY work;
+--
+--entity WCY18KS1S1_Chudzik_Mateusz_HIGHT_Control_tb is
+--end entity WCY18KS1S1_Chudzik_Mateusz_HIGHT_Control_tb;
+--
+--architecture testbench of WCY18KS1S1_Chudzik_Mateusz_HIGHT_Control_tb is
+--
+--	signal TEST : std_logic_vector(63 downto 0) := x"0000000000000000";
+--
+--	-- Input signals:
+--	
+--	signal inExtReset   : std_logic := '0';
+--	signal inExtDataWr	   : std_logic := '0';
+--	
+--	-- Output signals:
+--	
+--	signal outInitWhiteningKeysReg		 : out std_logic;
+--	signal outReset							 : out std_logic;
+--	signal outInitTransformationWrite    : out std_logic;
+--	signal outRoundTransformationWrite   : out std_logic;
+--	signal outFinalTransformationWrite   : out std_logic;
+--	signal outRoundNumber 				    : out std_logic_vector(5 downto 0);
+--	signal outBusy							    : out std_logic
+--	
+--	-- Clock signal:
+--	
+--	signal inClk : std_logic;
+--	constant clk_period : time := 10 ps;
+--
+--	-- Other signals:
+--	
+--component WCY18KS1S1_Chudzik_Mateusz_HIGHT_Control is
+--	port(
+--	inClk 							 : in std_logic;
+--	inExtReset 						 : in std_logic;
+--	inExtDataWr				 		 : in std_logic;
+--	outInitWhiteningKeysReg		 : out std_logic;
+--	outReset							 : out std_logic;
+--	outInitTransformationWrite  : out std_logic;
+--	outRoundTransformationWrite : out std_logic;
+--	outFinalTransformationWrite : out std_logic;
+--	outRoundNumber 				 : out std_logic_vector(5 downto 0);
+--	outBusy							 : out std_logic
+--	);
+--end component;
+--	
+--
+--begin
+--
+--	hight : WCY18KS1S1_Chudzik_Mateusz_HIGHT_Control
+--		port map(
+--			inClk => inClk,
+--			inExtReset => inExtReset,
+--			inExtDataWr => inExtDataWr,
+--			outInitWhiteningKeysReg => outInitWhiteningKeysReg,
+--			outReset => outReset,
+--			outInitTransformationWrite => outInitTransformationWrite,
+--			outRoundTransformationWrite => outRoundTransformationWrite,
+--			outFinalTransformationWrite => outFinalTransformationWrite,
+--			outRoundNumber => outRoundNumber,
+--			outBusy => outBusy
+--		);
+--
+--
+--	clock: process
+--	begin
+--		inClk <= '0';
+--		wait for clk_period / 2;
+--		inClk <= '1';
+--		wait for clk_period / 2;
+--	end process clock;
+--	
+--	stimulus: process
+--	begin
+--	
+--		inWriteData <= '0';
+--		inResetReg <= '0';
+--		inRoundKeys <= inRoundKeys;
+--
+--		wait for clk_period;
+--	
+--	
+--	
+--		inWriteData <= '1';
+--		inResetReg <= '0';
+--		inRoundKeys <= inRoundKeys;
+--
+--		wait for clk_period;
+--		
+--		inWriteData <= '0';
+--		inResetReg <= '1';
+--		inRoundKeys <= inRoundKeys;
+--
+--		wait for clk_period;
+--		
+--	end process stimulus;
+--
+--end architecture testbench;
